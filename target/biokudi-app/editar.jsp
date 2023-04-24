@@ -13,7 +13,7 @@
     %>
     <body>
         <h1>Actualizar registro</h1>
-        <form action="Servlet" method="POST">
+        <form action="Servlet" method="POST" accept-charset="UTF-8">
             <input type="hidden" name="instruccion" value="actualizar">
             <input type="hidden" name="idLugar" value="<%=editarLugar.getIdLugar()%>">
             <table>

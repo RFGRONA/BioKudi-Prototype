@@ -10,7 +10,7 @@
 
     <body>
         <h1>Registro de lugares</h1>
-        <form action="Servlet" method="POST">
+        <form action="Servlet" method="POST" accept-charset="UTF-8">
             <input type="hidden" name="instruccion" value="insertar">
             <table>
                 <tr>
@@ -26,12 +26,12 @@
                     <td><input type="text" name="coordenadas" /></td>
                 </tr>
                 <tr>
-                    <td>Descripcion</td>
-                    <td><textarea name="descripcion"></textarea></td>
-                </tr>
-                <tr>
                     <td>Actividad</td>
                     <td><textarea name="actividad"></textarea></td>
+                </tr>
+                <tr>
+                    <td>Descripcion</td>
+                    <td><textarea name="descripcion"></textarea></td>
                 </tr>
                 <tr>
                     <td>Informacion</td>
