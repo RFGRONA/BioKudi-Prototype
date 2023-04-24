@@ -1,0 +1,6 @@
+app\biokudi\JakartaRestConfiguration.class
+app\biokudi\controller\Servlet.class
+app\biokudi\model\Conexion.class
+app\biokudi\controller\ListarServlet.class
+app\biokudi\resources\JakartaEE8Resource.class
+app\biokudi\model\Lugares.class
