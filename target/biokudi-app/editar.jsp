@@ -30,12 +30,12 @@
                     <td><input type="text" name="coordenadas" value="<%=editarLugar.getCoordenada()%>" /></td>
                 </tr>
                 <tr>
-                    <td>Descripcion</td>
-                    <td><textarea name="descripcion"><%=editarLugar.getDescripcion()%></textarea></td>
-                </tr>
-                <tr>
                     <td>Actividad</td>
                     <td><textarea name="actividad"><%=editarLugar.getActividad()%></textarea></td>
+                </tr>
+                <tr>
+                    <td>Descripcion</td>
+                    <td><textarea name="descripcion"><%=editarLugar.getDescripcion()%></textarea></td>
                 </tr>
                 <tr>
                     <td>Informacion</td>

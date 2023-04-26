@@ -18,14 +18,14 @@
             <table>
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Nombre</th>
-                        <th>Dirección</th>
-                        <th>Coordenadas</th>
-                        <th>Actividad</th>
-                        <th>Descripción</th>
-                        <th>Información</th>
-                        <th style="width:130px">Acción</th>
+                        <th style="width:3.6%">ID</th>
+                        <th style="width:13%">Nombre</th>
+                        <th style="width:10.1%">Dirección</th>
+                        <th style="width:10.1%">Coordenadas</th>
+                        <th style="width:13%">Actividad</th>
+                        <th style="width:20%">Descripción</th>
+                        <th style="width:20%">Información</th>
+                        <th style="width:10.2%">Acción</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -63,7 +63,7 @@
                 </tbody>
             </table>
         </div>
-        <form class="boton" action="index.html">
+        <form class="boton" action="form.html">
             <button type="submit"> Volver a inicio</button>
         </form>
     </body>
