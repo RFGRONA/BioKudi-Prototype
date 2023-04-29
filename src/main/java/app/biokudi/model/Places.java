@@ -1,98 +1,102 @@
 package app.biokudi.model;
 
-public class Lugares {
+public abstract class Places {
     
-    private int idLugar;
-    private String nombre;
-    private String direccion;
-    private String coordenada;
-    private String actividad;
-    private String descripcion;
-    private String informacion;
+    // Abstract class that sets the minimal attributes and methods for creating places
+    
+    private int idPlace;
+    private String name;
+    private String address;
+    private String coordinate;
+    private String activity;
+    private String description;
+    private String information;
 
-    public Lugares() {
+    public Places() {
     }
     
-    //Sobrecargado sin ID
-    public Lugares(String nombre, String direccion, String coordenada, String actividad, String descripcion, String informacion) {
-        this.nombre = nombre;
-        this.direccion = direccion;
-        this.coordenada = coordenada;
-        this.actividad = actividad;
-        this.descripcion = descripcion;
-        this.informacion = informacion;
+    // Constructor overloaded without ID
+    public Places(String name, String address, String coordinate, String activity, String description, String information) {
+        this.name = name;
+        this.address = address;
+        this.coordinate = coordinate;
+        this.activity = activity;
+        this.description = description;
+        this.information = information;
     }
     
-    //Sobrecargado con ID
-    public Lugares(int idLugar, String nombre, String direccion, String coordenada, String actividad, String descripcion, String informacion) {
-        this.idLugar = idLugar;
-        this.nombre = nombre;
-        this.direccion = direccion;
-        this.coordenada = coordenada;
-        this.actividad = actividad;
-        this.descripcion = descripcion;
-        this.informacion = informacion;
+    // Constructor overloaded with ID
+    public Places(int idPlace, String name, String address, String coordinate, String activity, String description, String information) {
+        this.idPlace = idPlace;
+        this.name = name;
+        this.address = address;
+        this.coordinate = coordinate;
+        this.activity = activity;
+        this.description = description;
+        this.information = information;
     }
 
     @Override
     public String toString() {
-        return "Lugares{" + "idLugar=" + idLugar + ", nombre=" + nombre + ", direccion=" + direccion + ", coordenada=" + coordenada + ", actividad=" + actividad + ", descripcion=" + descripcion + ", informacion=" + informacion + '}';
+        return "Places{" + "idPlace=" + idPlace + ", name=" + name + ", address=" + address + ", coordinate=" + coordinate + ", activity=" + activity + ", description=" + description + ", information=" + information + '}';
+    }
+    
+    // Getters and Setters
+    
+    public int getIdPlace() {
+        return idPlace;
     }
 
-    public int getIdLugar() {
-        return idLugar;
+    public void setIdPlace(int idLugar) {
+        this.idPlace = idLugar;
     }
 
-    public void setIdLugar(int idLugar) {
-        this.idLugar = idLugar;
+    public String getName() {
+        return name;
     }
 
-    public String getNombre() {
-        return nombre;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public String getAddress() {
+        return address;
     }
 
-    public String getDireccion() {
-        return direccion;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
+    public String getCoordinate() {
+        return coordinate;
     }
 
-    public String getCoordenada() {
-        return coordenada;
+    public void setCoordinate(String coordinate) {
+        this.coordinate = coordinate;
     }
 
-    public void setCoordenada(String coordenada) {
-        this.coordenada = coordenada;
+    public String getActivity() {
+        return activity;
     }
 
-    public String getActividad() {
-        return actividad;
+    public void setActivity(String activity) {
+        this.activity = activity;
     }
 
-    public void setActividad(String actividad) {
-        this.actividad = actividad;
+    public String getDescription() {
+        return description;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public String getInformation() {
+        return information;
     }
 
-    public String getInformacion() {
-        return informacion;
-    }
-
-    public void setInformacion(String informacion) {
-        this.informacion = informacion;
+    public void setInformation(String information) {
+        this.information = information;
     }
    
 }

@@ -1,4 +1,4 @@
-<%@page import="app.biokudi.model.Lugares"%>
+<%@page import="app.biokudi.model.EcoPlaces"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
@@ -9,37 +9,37 @@
         <link href="style/ingreso.css" rel="stylesheet" type="text/css" />
     </head>
     <%
-        Lugares editarLugar = (Lugares) request.getAttribute("editarLugar");
+        EcoPlaces editPlace = (EcoPlaces) request.getAttribute("editPlace");
     %>
     <body>
         <h1>Actualizar registro</h1>
         <form action="Servlet" method="POST" accept-charset="UTF-8">
-            <input type="hidden" name="instruccion" value="actualizar">
-            <input type="hidden" name="idLugar" value="<%=editarLugar.getIdLugar()%>">
+            <input type="hidden" name="instruction" value="update">
+            <input type="hidden" name="idPlace" value="<%=editPlace.getIdPlace()%>">
             <table>
                 <tr>
                     <td>Nombre</td>
-                    <td><input type="text" name="nombre" value="<%=editarLugar.getNombre()%>" /></td>
+                    <td><input type="text" name="name" value="<%=editPlace.getName()%>" /></td>
                 </tr>
                 <tr>
                     <td>Direccion</td>
-                    <td><input type="text" name="direccion" value="<%=editarLugar.getDireccion()%>" /></td>
+                    <td><input type="text" name="address" value="<%=editPlace.getAddress()%>" /></td>
                 </tr>
                 <tr>
                     <td>Coordenadas</td>
-                    <td><input type="text" name="coordenadas" value="<%=editarLugar.getCoordenada()%>" /></td>
-                </tr>
-                <tr>
-                    <td>Descripcion</td>
-                    <td><textarea name="descripcion"><%=editarLugar.getDescripcion()%></textarea></td>
+                    <td><input type="text" name="coordinate" value="<%=editPlace.getCoordinate()%>" /></td>
                 </tr>
                 <tr>
                     <td>Actividad</td>
-                    <td><textarea name="actividad"><%=editarLugar.getActividad()%></textarea></td>
+                    <td><textarea name="activity"><%=editPlace.getActivity()%></textarea></td>
+                </tr>
+                <tr>
+                    <td>Descripcion</td>
+                    <td><textarea name="description"><%=editPlace.getDescription()%></textarea></td>
                 </tr>
                 <tr>
                     <td>Informacion</td>
-                    <td><textarea name="informacion"><%=editarLugar.getInformacion()%></textarea></td>
+                    <td><textarea name="information"><%=editPlace.getInformation()%></textarea></td>
                 </tr>
             </table>
             <div class="boton">

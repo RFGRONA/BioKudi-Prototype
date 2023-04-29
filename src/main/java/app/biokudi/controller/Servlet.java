@@ -1,7 +1,7 @@
 package app.biokudi.controller;
 
-import app.biokudi.model.Conexion;
-import app.biokudi.model.Lugares;
+import app.biokudi.model.EcoPlacesConnection;
+import app.biokudi.model.EcoPlaces;
 import java.io.IOException;
 import javax.annotation.Resource;
 import javax.servlet.ServletException;
@@ -11,27 +11,27 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.sql.*;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.sql.DataSource;
 
 @WebServlet(name = "Servlet", urlPatterns = {"/Servlet"})
 public class Servlet extends HttpServlet {
 
-    private Conexion conexion;
+    private EcoPlacesConnection connectEcoPlaces;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     }
-
+    
+    // Calls the connection pool set in context.xml
     @Resource(name = "jdbc/biokudi")
-    private DataSource poolConexiones;
-
+    private DataSource dataPool;
+    
+    //Initialize the connection through the connection pool
     @Override
     public void init() throws ServletException {
         super.init();
         try {
-            conexion = new Conexion(poolConexiones);
+            connectEcoPlaces = new EcoPlacesConnection(dataPool);
         } catch (Exception e) {
             throw new ServletException(e);
         }
@@ -39,97 +39,93 @@ public class Servlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        listar(request, response);
+        List<EcoPlaces> places;
+        try {
+            places = connectEcoPlaces.getListPlaces();
+            System.out.println(places);
+            request.setAttribute("listPlaces", places);
+            request.getRequestDispatcher("list.jsp").forward(request, response);
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Error Servlet: doGet");
+        }
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
-        String instruccion = request.getParameter("instruccion");
-        if (instruccion.equals("insertar")) {
-            insertar(request, response);
-            response.sendRedirect("ListarServlet");
-        } else if (instruccion.equals("editar")) {
-            editar(request, response);
-            response.sendRedirect("ListarServlet");
-        } else if (instruccion.equals("actualizar")) {
-            actualizar(request, response);
-            response.sendRedirect("ListarServlet");
-        } else if (instruccion.equals("eliminar")) {
-            eliminar(request, response);
-            response.sendRedirect("ListarServlet");
+        String instruction = request.getParameter("instruction");
+        if (instruction.equals("insert")) {
+            insert(request, response);
+            response.sendRedirect("ListServlet");
+        } else if (instruction.equals("edit")) {
+            edit(request, response);
+            response.sendRedirect("ListServlet");
+        } else if (instruction.equals("update")) {
+            update(request, response);
+            response.sendRedirect("ListServlet");
+        } else if (instruction.equals("delete")) {
+            delete(request, response);
+            response.sendRedirect("ListServlet");
         } else {
-            listar(request, response);
+            doGet(request, response);
         }
     }
 
-    protected void listar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Lugares> lugares;
+    protected void insert(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            lugares = conexion.getLugares();
-            System.out.println(lugares);
-            request.setAttribute("listaLugares", lugares);
-            request.getRequestDispatcher("lista.jsp").forward(request, response);
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("Error Servlet: listar");
-        }
-    }
+            String name = request.getParameter("name");
+            String address = request.getParameter("address");
+            String coordinate = request.getParameter("coordinate");
+            String description = request.getParameter("description");
+            String activity = request.getParameter("activity");
+            String information = request.getParameter("information");
 
-    protected void insertar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        try {
-            String nombre = request.getParameter("nombre");
-            String direccion = request.getParameter("direccion");
-            String coordenadas = request.getParameter("coordenadas");
-            String descripcion = request.getParameter("descripcion");
-            String actividad = request.getParameter("actividad");
-            String informacion = request.getParameter("informacion");
-
-            Lugares lugar = new Lugares(nombre, direccion, coordenadas, actividad, descripcion, informacion);
-            conexion.agregarLugar(lugar);
+            EcoPlaces lugar = new EcoPlaces(name, address, coordinate, activity, description, information);
+            connectEcoPlaces.addPlace(lugar);
         } catch (SQLException ex) {
             ex.printStackTrace();
-            System.out.println("Error Servlet: insertar");
+            System.out.println("Error Servlet: insert");
         }
     }
 
-    protected void editar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void edit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            int idLugar = Integer.parseInt(request.getParameter("idLugar"));
-            Lugares editarLugar = conexion.getLugar(idLugar);
-            request.setAttribute("editarLugar", editarLugar);
-            request.getRequestDispatcher("editar.jsp").forward(request, response);
+            int idPlace = Integer.parseInt(request.getParameter("idPlace"));
+            EcoPlaces editPlace = connectEcoPlaces.getPlace(idPlace);
+            request.setAttribute("editPlace", editPlace);
+            request.getRequestDispatcher("edit.jsp").forward(request, response);
         } catch (SQLException ex) {
             ex.printStackTrace();
-            System.out.println("Error Servlet: editar");
+            System.out.println("Error Servlet: edit");
         }
     }
 
-    protected void actualizar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            int idLugar = Integer.parseInt(request.getParameter("idLugar"));
-            String nombre = request.getParameter("nombre");
-            String direccion = request.getParameter("direccion");
-            String coordenadas = request.getParameter("coordenadas");
-            String descripcion = request.getParameter("descripcion");
-            String actividad = request.getParameter("actividad");
-            String informacion = request.getParameter("informacion");
+            int idPlace = Integer.parseInt(request.getParameter("idPlace"));
+            String name = request.getParameter("name");
+            String address = request.getParameter("address");
+            String coordinate = request.getParameter("coordinate");
+            String description = request.getParameter("description");
+            String activity = request.getParameter("activity");
+            String information = request.getParameter("information");
 
-            Lugares lugarActualizado = new Lugares(idLugar, nombre, direccion, coordenadas, actividad, descripcion, informacion);
-            conexion.actualizar(lugarActualizado);
+            EcoPlaces updatedPlace = new EcoPlaces(idPlace, name, address, coordinate, activity, description, information);
+            connectEcoPlaces.updatePlace(updatedPlace);
         } catch (SQLException ex) {
             ex.printStackTrace();
-            System.out.println("Error Servlet: actualizar");
+            System.out.println("Error Servlet: update");
         }
     }
 
-    protected void eliminar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            int idLugar = Integer.parseInt(request.getParameter("idLugar"));
-            conexion.borrarLugar(idLugar);
+            int idPlace = Integer.parseInt(request.getParameter("idPlace"));
+            connectEcoPlaces.deletePlace(idPlace);
         } catch (SQLException ex) {
             ex.printStackTrace();
-            System.out.println("Error Servlet: eliminar");
+            System.out.println("Error Servlet: delete");
         }
     }
 
