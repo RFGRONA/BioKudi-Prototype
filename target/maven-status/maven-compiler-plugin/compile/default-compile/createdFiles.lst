@@ -1,5 +1,6 @@
 app\biokudi\JakartaRestConfiguration.class
 app\biokudi\model\iConnection.class
+app\biokudi\controller\MapServlet.class
 app\biokudi\controller\Servlet.class
 app\biokudi\controller\ListServlet.class
 app\biokudi\resources\JakartaEE8Resource.class

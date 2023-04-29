@@ -13,4 +13,8 @@ public class EcoPlaces extends Places{
         super(idPlace, name, address, coordinate, activity, description, information);
     }
     
+    public EcoPlaces(int idPlace, String name, String coordinate) {
+        super(idPlace, name, coordinate);
+    }
+    
 }

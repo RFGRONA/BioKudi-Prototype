@@ -49,6 +49,36 @@ public class EcoPlacesConnection implements iConnection<EcoPlaces>{
         return places;
     }
     
+    public List<EcoPlaces> getListMarkers() throws SQLException {
+        // Returns in an ArrayList all the information from the database
+        List<EcoPlaces> places = new ArrayList<>();
+        Connection connect = null;
+        Statement declaration = null;
+        try {
+            String instruction = "SELECT * FROM lugares";
+            connect = rootData.getConnection();
+            declaration = connect.createStatement();
+            ResultSet result = declaration.executeQuery(instruction);
+
+            while (result.next()) {
+                int idPlace = result.getInt("ID");
+                String name = result.getString("NOMBRE");
+                String coordinate = result.getString("COORDENADAS");
+
+                EcoPlaces tempPlace = new EcoPlaces(idPlace, name, coordinate);
+                places.add(tempPlace);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Error getListMarkers - EcoPlaces");
+        } finally {
+            declaration.close();
+            connect.close();
+        }
+
+        return places;
+    }
+    
     @Override
     public void addPlace(EcoPlaces place) throws SQLException {
         // Receives an object of type EcoPlaces and adds it to the database

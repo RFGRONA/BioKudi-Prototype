@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Context path="/biokudi">
-  <Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" masActive="10" maxIdle="6" maxWait="5000" name="jdbc/biokudi" password="" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/biokudi?useUnicode=true&amp;characterEncoding=UTF-8" username="root">
-    </Resource>
-</Context>

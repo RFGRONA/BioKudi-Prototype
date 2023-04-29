@@ -35,6 +35,13 @@ public abstract class Places {
         this.description = description;
         this.information = information;
     }
+    
+    // Constructor overloaded with data for markers
+    public Places(int idPlace, String name, String coordinate) {
+        this.idPlace = idPlace;
+        this.name = name;
+        this.coordinate = coordinate;
+    }
 
     @Override
     public String toString() {

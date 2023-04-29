@@ -64,7 +64,7 @@
                 </tbody>
             </table>
         </div>
-        <form class="boton" action="index.html">
+        <form class="boton" action="form.html">
             <button type="submit"> Volver a inicio</button>
         </form>
     </body>

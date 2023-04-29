@@ -6,7 +6,7 @@
         <title>Editar lugar</title>
         <meta charset="UTF-8">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href="style/ingreso.css" rel="stylesheet" type="text/css" />
+        <link href="style/acces.css" rel="stylesheet" type="text/css" />
     </head>
     <%
         EcoPlaces editPlace = (EcoPlaces) request.getAttribute("editPlace");

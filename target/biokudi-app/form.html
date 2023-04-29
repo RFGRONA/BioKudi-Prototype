@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <title>Lugares BioKudi</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="style/acces.css" rel="stylesheet" type="text/css" />
+    </head>
+
+    <body>
+        <h1>Registro de lugares</h1>
+        <form action="Servlet" method="POST" accept-charset="UTF-8">
+            <input type="hidden" name="instruction" value="insert">
+            <table>
+                <tr>
+                    <td>Nombre</td>
+                    <td><input type="text" name="name" /></td>
+                </tr>
+                <tr>
+                    <td>Direccion</td>
+                    <td><input type="text" name="address" /></td>
+                </tr>
+                <tr>
+                    <td>Coordenadas</td>
+                    <td><input type="text" name="coordinate" /></td>
+                </tr>
+                <tr>
+                    <td>Actividad</td>
+                    <td><textarea name="activity"></textarea></td>
+                </tr>
+                <tr>
+                    <td>Descripcion</td>
+                    <td><textarea name="description"></textarea></td>
+                </tr>
+                <tr>
+                    <td>Informacion</td>
+                    <td><textarea name="information"></textarea></td>
+                </tr>
+            </table>
+            <div class="boton">
+                <button type="submit">Enviar</button>
+        </form>
+        <form action="Servlet" method="GET">
+            <button type="submit">Mostrar</button>
+        </form>
+    </div>
+</body>
+
+</html>
