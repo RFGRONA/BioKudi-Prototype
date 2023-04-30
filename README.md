@@ -9,8 +9,8 @@
 * Base de datos SQL
 
 ***Importante:***
-* La conexión con la base de datos se establece en el _ _context.xml_ _ en la carpeta _ _webapp_ _.
-* El archivo _ _biokudi.sql_ _ es una base de datos con una tabla que contiene todos los datos con corte a 29/04/2023
+* La conexión con la base de datos se establece en el _context.xml_ en la carpeta _webapp_.
+* El archivo _biokudi.sql_ es una base de datos con una tabla que contiene todos los datos con corte a 29/04/2023
 
 ***Primera entrega***
 En esta primera entrega, se ha desarrollado el CRUD del proyecto, el cual permite almacenar y gestionar toda la información relevante sobre las ubicaciones que se mostrarán en el mapa interactivo. A través de este CRUD, el usuario podrán agregar, editar, eliminar y visualizar la información de los lugares.
