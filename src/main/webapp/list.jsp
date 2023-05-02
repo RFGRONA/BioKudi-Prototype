@@ -7,6 +7,7 @@
     <head>
         <title>Base de datos</title>
         <meta charset="UTF-8">
+        <link rel="icon" type="image/x-icon" href="style/icon.svg">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="style/table.css" rel="stylesheet" type="text/css"/>
     </head>
@@ -64,8 +65,14 @@
                 </tbody>
             </table>
         </div>
-        <form class="boton" action="form.html">
-            <button type="submit"> Volver a inicio</button>
+        <div class="boton">
+            <form action="form.html">
+            <button type="submit">Registro</button>
         </form>
+        <form action="index.html">
+            <button type="submit">Inicio</button>
+        </form>
+        </div>
+        
     </body>
 </html>

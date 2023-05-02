@@ -5,17 +5,20 @@
     <title>Info</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="style/icon.svg">
     <link href="style/info.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-    <h1> Selecciona un lugar </h1>
-    <a href="index.html" id="goHomeBtn">Volver al inicio</a>
-    <script>
-      document.getElementById("goHomeBtn").addEventListener("click", function () {
-            parent.location.href = "index.html";
-        });
-    </script>
+    <div id="first">
+        <h1> Selecciona un lugar </h1>
+        <a href="index.html" id="goHomeBtn">Volver al inicio</a>
+        <script>
+            document.getElementById("goHomeBtn").addEventListener("click", function () {
+                parent.location.href = "index.html";
+            });
+        </script>
+    </div>
 </body>
 
 </html>

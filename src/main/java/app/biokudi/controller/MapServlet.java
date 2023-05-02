@@ -63,13 +63,12 @@ public class MapServlet extends HttpServlet {
             EcoPlaces place = connectEcoPlaces.getPlace(idPlace);
             response.setContentType("text/html;charset=UTF-8");
             try (PrintWriter out = response.getWriter()) {
-                out.println("<h2>Información del lugar:</h2>");
-                out.println("<p><strong>Nombre: </strong>" + place.getName() + "</p>");
-                out.println("<p><strong>Actividad: </strong>" + place.getActivity() + "</p>");
-                out.println("<p><strong>Dirección: </strong>" + place.getAddress() + "</p>");
-                out.println("<p><strong>Descripción: </strong><br>" + place.getDescription() + "</p>");
-                out.println("<p><strong>Información: </strong><br>" + place.getInformation() + "</p>");
-                out.println("<a href=\"index.html\" id=\"goHomeBtn\">Volver al inicio</a>");
+                out.println("<table><tr><th><span><h1>" + place.getName() + "</h1></span></th></tr>");
+                out.println("<tr><td><span class=\"title\">Actividad</span><br><p>" + place.getActivity() + "</p></td></tr>");
+                out.println("<tr><td><span class=\"title\">Dirección</span><br><p>" + place.getAddress() + "</p></td></tr>");
+                out.println("<tr><td><span class=\"title\">Descripción</span><br><p>" + place.getDescription() + "</p></td></tr>");
+                out.println("<tr><td><span class=\"title\">Información</span><br><p>" + place.getInformation() + "</p></td></tr>");
+                out.println("<tr><td><a href=\"index.html\" id=\"goHomeBtn\">Volver al inicio</a></td></tr></table>");
                 out.println("<script> document.getElementById(\"goHomeBtn\").addEventListener(\"click\", function () { parent.location.href = \"index.html\"; }); </script>");
             }
         } catch (SQLException ex) {

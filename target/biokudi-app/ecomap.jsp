@@ -8,6 +8,7 @@
     <head>
         <title>Mapa Interactivo</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="icon" type="image/x-icon" href="style/icon.svg">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
         <link href="style/map.css" rel="stylesheet" type="text/css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -37,8 +38,16 @@
             <c:set var="coords" value="${place.coordinate.split(',')}"/>
             <script>
                 var coords = [<c:out value="${coords[0]}"/>, <c:out value="${coords[1]}"/>];
-                var marker = L.marker(coords).addTo(map);
-                marker.bindPopup('<h3><c:out value="${place.name}"/></h3>').on('click', function () {
+                var greenIcon = new L.Icon({
+                    iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+                    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/images/marker-shadow.png',
+                    iconSize: [25, 41],
+                    iconAnchor: [12, 41],
+                    popupAnchor: [1, -34],
+                    shadowSize: [41, 41]
+                });
+                var marker = L.marker(coords, {icon: greenIcon}).addTo(map);
+                marker.bindPopup('<h3><c:out value="${place.name}"/></h3>').on('click', function () { 
                     showLugarInfo('<c:out value="${place.idPlace}"/>');
                 });
             </script>

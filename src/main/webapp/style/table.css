@@ -38,8 +38,18 @@ tr,td,th {
   vertical-align: middle;
 }
 
-/* Use this if you use span-x classes on th/td. */
 table .last { padding-right: 0; }
+
+.boton {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  justify-items: end;
+}
+
+.boton > :nth-child(2) {
+  justify-self: start;
+}
 
 .boton button {
   background-color: #4CAF50;

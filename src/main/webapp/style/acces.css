@@ -30,13 +30,13 @@ textarea {
 
 .boton {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 10px;
 
 }
 
 .boton button {
-    width: 240px;
+    width: 160px;
     background-color: #4CAF50;
     color: white;
     padding: 12px 20px;

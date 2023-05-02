@@ -1,16 +1,160 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Inicio Biokudi</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <form action="form.html" method="GET">
-            <button type="submit">Tabla</button>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biokudi</title>
+    <link rel="icon" type="image/x-icon" href="style/icon.svg">
+    <link href="style/index.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/fc3ff67d7b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <div class="title">
+            <h3> <i class="fa fa-compass" aria-hidden="true"></i> Biokudi</h3>
+        </div>
+
+        <nav>
+            <ul>
+                <li>
+                    <form action="Act.jsp">
+                        <button class="button-header" type="submit">Actividades</button>
+                    </form>
+                </li>
+
+                <li>
+                    <form action="MapServlet" method="get">
+                        <button class="button-header" type="submit">Mapa</button>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+        <form action="form.html" method="get">
+            <button class="button-header" type="submit"><i class="fa-solid fa-table-list"></i></button>
         </form>
-        <form action="MapServlet" method="GET">
-            <button type="submit">Servlet</button>
-        </form>
-    </body>
+        
+    </header>
+    
+    <div class="title-container">
+        <div class="text">
+            <h2>Descubre la belleza de Cundinamarca de manera sostenible</h2>
+            <br>
+            <p>En Biokudi, nos preocupamos por el impacto de nuestras actividades turísticas en la biodiversidad del
+                departamento y por ello, ofrecemos información sobre aquellos destinos que promuevan la
+                sostenibilidad y
+                el cuidado de la naturaleza. Biokudi te permitirá encontrar opciones turísticas que te acerquen a la
+                flora y fauna del departamento de Cundinamarca de manera responsable y consciente.</p>
+        </div>
+        <div class="image">
+            <img src="https://images.unsplash.com/photo-1584428018317-da0b876f4ec6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1125&q=80"
+                alt="">
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="subcontainer" id="image-slider">
+
+            <img class="images"
+                src="https://images.unsplash.com/photo-1485201543483-f06c8d2a8fb4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80"
+                alt="">
+
+
+            <img class="images"
+                src="https://images.unsplash.com/photo-1623662455755-80ee3ad16896?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                alt="">
+
+
+            <img class="images"
+                src="https://images.unsplash.com/photo-1532443603613-61fa154742cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80"
+                alt="">
+
+
+            <img class="images"
+                src="https://images.unsplash.com/photo-1533699224246-6dc3b3ed3304?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1931&q=80"
+                alt="">
+
+
+            <img class="images"
+                src="https://images.unsplash.com/photo-1454372182658-c712e4c5a1db?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                alt="">
+
+            <img class="images"
+                src="https://images.unsplash.com/photo-1599651317690-b0283c307261?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1411&q=80"
+                alt="">
+
+            <img class="images"
+                src="https://images.unsplash.com/photo-1539617546058-a8f9510b464e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                alt="">
+
+            <img class="images"
+                src="https://images.unsplash.com/photo-1536308037887-165852797016?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1426&q=80"
+                alt="">
+
+            <img class="images"
+                src="https://images.unsplash.com/photo-1568632234157-ce7aecd03d0d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                alt="">
+
+            <img class="images"
+                src="https://images.unsplash.com/photo-1606602842475-a5852a58b399?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1476&q=80"
+                alt="">
+
+
+        </div>
+    </div>
+
+    <script>
+        const slider = document.getElementById('image-slider');
+        const imageCount = slider.children.length / 2;
+        document.styleSheets[0].addRule('@keyframes carousel', `50% { transform: translateX(calc(-225px * ${imageCount})); }`);
+    </script>
+
+    <br>
+    <p class="info">Mas de 100 actividades amigables con el ambiente</p>
+    <div class="last">
+        <div class="lastcontainer" style="padding-top: 80px;">
+            <div>
+                <i class="fa fa-tree" aria-hidden="true"></i> <strong>Conservación biodiversa</strong> <br><br>
+                <p>Al elegir el ecoturismo, se apoya la protección de la biodiversidad y se preserva la naturaleza para
+                    las generaciones futuras.
+
+            </div>
+            <div>
+                <i class="fa fa-seedling" aria-hidden="true"></i> <strong>Conciencia Ambiental</strong> <br><br>
+                <p>El ecoturismo sensibiliza a los turistas sobre la importancia del cuidado del medio ambiente y la
+                    necesidad de preservar la naturaleza.
+            </div>
+            <div>
+                <i class="fa fa-leaf" aria-hidden="true"></i> <strong>Desarrollo sostenible</strong> <br><br>
+                <p>Puede ser una fuente de desarrollo económico para las comunidades locales que se encuentran cerca de
+                    áreas naturales protegidas.
+            </div>
+        </div>
+        <div class="lastcontainer">
+            <div>
+                <i class="fa fa-water" aria-hidden="true"></i> <strong>Experiencias unicas</strong> <br><br>
+                <p>Los turistas pueden experimentar la vida silvestre de cerca, aprender de la cultura local y
+                    participar en actividades tradicionales.
+            </div>
+            <div>
+                <i class="fa fa-heart" aria-hidden="true"></i> <strong>Salud y Bienestar</strong> <br><br>
+                <p>Implica actividades al aire libre como caminatas, paseos en bote, y natación, lo que puede mejorar la
+                    salud física y mental de los turistas.
+            </div>
+        </div>
+        <br>
+    </div>
+    <footer>
+        <p> Universidad de Cundinamarca - Extensión Facatativá </p>
+        <p> Ingenieria de sistemas y computación - Programación 2 </p>
+        <p> IPA - 2023 </p>
+    </footer>
+</body>
+
 </html>

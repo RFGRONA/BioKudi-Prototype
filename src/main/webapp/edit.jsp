@@ -5,6 +5,7 @@
     <head>
         <title>Editar lugar</title>
         <meta charset="UTF-8">
+        <link rel="icon" type="image/x-icon" href="style/icon.svg">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="style/acces.css" rel="stylesheet" type="text/css" />
     </head>

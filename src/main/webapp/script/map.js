@@ -22,7 +22,6 @@ fetch('./script/cundinamarca.geojson')
 .then(function(data) {
   cundinamarcaLayer.addData(data);
   cundinamarcaLayer.addTo(map);
-  // Define los límites geográficos para el mapa
   var bounds = cundinamarcaLayer.getBounds();
   map.setMaxBounds(bounds);
   map.on('drag', function() {
