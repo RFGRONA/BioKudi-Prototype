@@ -1,4 +1,4 @@
-# BioKudi# BioKudi
+# BioKudi
 
 #### Integrantes:
 - Fredy Alejandro Zarate Abril
