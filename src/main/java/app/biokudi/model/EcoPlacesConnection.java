@@ -51,7 +51,7 @@ public class EcoPlacesConnection implements iConnection<EcoPlaces>{
     
     
     public List<EcoPlaces> getListActivities() throws SQLException {
-        // Returns in an ArrayList all the information from the database
+        // Returns in an ArrayList all the information from the database 
         List<EcoPlaces> places = new ArrayList<>();
         Connection connect = null;
         Statement declaration = null;

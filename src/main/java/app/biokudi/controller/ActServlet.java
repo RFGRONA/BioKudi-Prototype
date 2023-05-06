@@ -46,7 +46,7 @@ public class ActServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // Receives an ArrayList with all the information from the database and sends it to list.jsp
+        // Receives an ArrayList with all the information from the database and sends it to act.jsp
         List<EcoPlaces> places;
         try {
             places = connectEcoPlaces.getListActivities();
@@ -55,7 +55,7 @@ public class ActServlet extends HttpServlet {
             request.getRequestDispatcher("act.jsp").forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("Error Servlet: doGet    FERXXO");
+            System.out.println("Error Servlet: doGet ActServlet");
         }
     }
 
