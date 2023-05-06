@@ -49,6 +49,39 @@ public class EcoPlacesConnection implements iConnection<EcoPlaces>{
         return places;
     }
     
+    
+    public List<EcoPlaces> getListActivities() throws SQLException {
+        // Returns in an ArrayList all the information from the database
+        List<EcoPlaces> places = new ArrayList<>();
+        Connection connect = null;
+        Statement declaration = null;
+        try {
+            String instruction = "SELECT * FROM lugares";
+            connect = rootData.getConnection();
+            declaration = connect.createStatement();
+            ResultSet result = declaration.executeQuery(instruction);
+
+            while (result.next()) {
+                String name = result.getString("NOMBRE");
+                String address = result.getString("DIRECCION");
+                String activity = result.getString("ACTIVIDAD");
+                String description = result.getString("DESCRIPCION");
+                String information = result.getString("INFORMACION");
+
+                EcoPlaces tempPlace = new EcoPlaces(name, address, activity, description, information);
+                places.add(tempPlace);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Error getListPlaces - EcoPlaces");
+        } finally {
+            declaration.close();
+            connect.close();
+        }
+
+        return places;
+    }
+    
     public List<EcoPlaces> getListMarkers() throws SQLException {
         // Returns in an ArrayList all the information from the database
         List<EcoPlaces> places = new ArrayList<>();
@@ -78,6 +111,8 @@ public class EcoPlacesConnection implements iConnection<EcoPlaces>{
 
         return places;
     }
+    
+    
     
     @Override
     public void addPlace(EcoPlaces place) throws SQLException {

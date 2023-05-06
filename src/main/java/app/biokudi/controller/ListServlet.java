@@ -12,21 +12,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
-@WebServlet(name = "ListServlet", urlPatterns = {"/ListServlet"})
+@WebServlet(name = "ListServlet", urlPatterns = { "/ListServlet" })
 public class ListServlet extends HttpServlet {
-    
-    // This class uses the Post-Redirect-Get pattern to avoid cloning data when the page is reloaded
-    
+
+    // This class uses the Post-Redirect-Get pattern to avoid cloning data when the
+    // page is reloaded
+
     private EcoPlacesConnection connectEcoPlaces;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     }
-    
+
     // Calls the connection pool set in context.xml
     @Resource(name = "jdbc/biokudi")
     private DataSource dataPool;
-    
+
     // Initialize the connection through the connection pool
     @Override
     public void init() throws ServletException {
@@ -41,12 +42,14 @@ public class ListServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // Receives an ArrayList with all the information from the database and sends it to list.jsp
+        // Receives an ArrayList with all the information from the database and sends it
+        // to list.jsp
         List<EcoPlaces> places;
         try {
             places = connectEcoPlaces.getListPlaces();
             System.out.println(places);
             request.setAttribute("listPlaces", places);
+            String instruction = (String) request.getAttribute("instruction");
             request.getRequestDispatcher("list.jsp").forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();

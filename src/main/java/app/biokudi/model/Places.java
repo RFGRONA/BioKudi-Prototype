@@ -25,6 +25,15 @@ public abstract class Places {
         this.information = information;
     }
     
+    // Constructor overloaded without ID
+    public Places(String name, String address, String activity, String description, String information) {
+        this.name = name;
+        this.address = address;
+        this.activity = activity;
+        this.description = description;
+        this.information = information;
+    }
+    
     // Constructor overloaded with ID
     public Places(int idPlace, String name, String address, String coordinate, String activity, String description, String information) {
         this.idPlace = idPlace;

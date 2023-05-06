@@ -22,9 +22,9 @@ header {
     cursor: pointer;
     background-color: transparent;
     font-weight: bold;
-  }
-  
-  .button-header:before {
+}
+
+.button-header:before {
     content: '';
     position: absolute;
     z-index: -1;
@@ -36,17 +36,17 @@ header {
     box-shadow: 0 0 10px #2f4b26;
     opacity: 0;
     transition: opacity 0.3s ease;
-  }
-  
-  .button-header:hover:before {
+}
+
+.button-header:hover:before {
     opacity: 1;
-  }
-  
-  .button-header:hover {
+}
+
+.button-header:hover {
     transition: color 0.3s ease;
     color: #2f4b26;
-  }
-  
+}
+
 
 .title h3 {
     margin-left: 20px;
@@ -135,7 +135,7 @@ body {
     align-items: center;
     flex-direction: row;
     margin: 0 auto;
-    overflow: hidden; 
+    overflow: hidden;
     position: relative;
     width: 76%;
     height: 120px;
@@ -215,4 +215,38 @@ footer p {
     font-size: 18px;
     margin: 0;
     font-style: italic;
+}
+table{
+    margin: 0 auto;
+    border: 1px solid black;
+    border-radius: 15px;
+    background: #ffffff;
+    max-width: 800px;
+    min-width: 800px;
+    margin-top: 50px;
+}
+table td {
+    padding: 20px;
+    font-size: x-large;
+    max-width: 300px;
+    word-wrap: break-word;
+}
+.name{
+    border-right: 1px solid #ccc;
+    font-weight: bold;
+    color: #2f4b26;
+    text-decoration: underline;
+    
+}
+.address{
+    border-right: 1px solid #ccc;
+    color: #ffa834;
+}
+.information{
+    border-right: 1px solid #ccc;
+    color: #2f4b26;
+    font-style: italic;
+}
+.description{
+    font-weight: bold;
 }

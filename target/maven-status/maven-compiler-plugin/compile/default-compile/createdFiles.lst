@@ -1,4 +1,5 @@
 app\biokudi\JakartaRestConfiguration.class
+app\biokudi\controller\ActServlet.class
 app\biokudi\model\iConnection.class
 app\biokudi\controller\MapServlet.class
 app\biokudi\controller\Servlet.class

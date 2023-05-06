@@ -13,7 +13,7 @@ import java.sql.*;
 import java.util.List;
 import javax.sql.DataSource;
 
-@WebServlet(name = "Servlet", urlPatterns = {"/Servlet"})
+@WebServlet(name = "Servlet", urlPatterns = { "/Servlet" })
 public class Servlet extends HttpServlet {
 
     private EcoPlacesConnection connectEcoPlaces;
@@ -21,12 +21,12 @@ public class Servlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     }
-    
+
     // Calls the connection pool set in context.xml
     @Resource(name = "jdbc/biokudi")
     private DataSource dataPool;
-    
-    //Initialize the connection through the connection pool
+
+    // Initialize the connection through the connection pool
     @Override
     public void init() throws ServletException {
         super.init();
@@ -38,7 +38,8 @@ public class Servlet extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         List<EcoPlaces> places;
         try {
             places = connectEcoPlaces.getListPlaces();
@@ -52,7 +53,8 @@ public class Servlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         String instruction = request.getParameter("instruction");
         if (instruction.equals("insert")) {
@@ -67,12 +69,15 @@ public class Servlet extends HttpServlet {
         } else if (instruction.equals("delete")) {
             delete(request, response);
             response.sendRedirect("ListServlet");
+        } else if (instruction.equals("activity")) {
+            response.sendRedirect("ActServlet");
         } else {
             doGet(request, response);
         }
     }
 
-    protected void insert(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void insert(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         try {
             String name = request.getParameter("name");
             String address = request.getParameter("address");
@@ -101,7 +106,8 @@ public class Servlet extends HttpServlet {
         }
     }
 
-    protected void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void update(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         try {
             int idPlace = Integer.parseInt(request.getParameter("idPlace"));
             String name = request.getParameter("name");
@@ -111,7 +117,8 @@ public class Servlet extends HttpServlet {
             String activity = request.getParameter("activity");
             String information = request.getParameter("information");
 
-            EcoPlaces updatedPlace = new EcoPlaces(idPlace, name, address, coordinate, activity, description, information);
+            EcoPlaces updatedPlace = new EcoPlaces(idPlace, name, address, coordinate, activity, description,
+                    information);
             connectEcoPlaces.updatePlace(updatedPlace);
         } catch (SQLException ex) {
             ex.printStackTrace();
@@ -119,7 +126,8 @@ public class Servlet extends HttpServlet {
         }
     }
 
-    protected void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void delete(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         try {
             int idPlace = Integer.parseInt(request.getParameter("idPlace"));
             connectEcoPlaces.deletePlace(idPlace);
