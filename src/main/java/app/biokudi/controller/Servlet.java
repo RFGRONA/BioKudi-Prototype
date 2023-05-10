@@ -86,8 +86,8 @@ public class Servlet extends HttpServlet {
             String activity = request.getParameter("activity");
             String information = request.getParameter("information");
 
-            EcoPlaces lugar = new EcoPlaces(name, address, coordinate, activity, description, information);
-            connectEcoPlaces.addPlace(lugar);
+            EcoPlaces place = new EcoPlaces(name, address, coordinate, activity, description, information);
+            connectEcoPlaces.addPlace(place);
         } catch (SQLException ex) {
             ex.printStackTrace();
             System.out.println("Error Servlet: insert");
