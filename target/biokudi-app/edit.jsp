@@ -20,27 +20,27 @@
             <table>
                 <tr>
                     <td>Nombre</td>
-                    <td><input type="text" name="name" value="<%=editPlace.getName()%>" /></td>
+                    <td><input type="text" name="name" value="<%=editPlace.getName()%>" required/></td>
                 </tr>
                 <tr>
                     <td>Direccion</td>
-                    <td><input type="text" name="address" value="<%=editPlace.getAddress()%>" /></td>
+                    <td><input type="text" name="address" value="<%=editPlace.getAddress()%>" required/></td>
                 </tr>
                 <tr>
                     <td>Coordenadas</td>
-                    <td><input type="text" name="coordinate" value="<%=editPlace.getCoordinate()%>" /></td>
+                    <td><input type="text" name="coordinate" value="<%=editPlace.getCoordinate()%>" required/></td>
                 </tr>
                 <tr>
                     <td>Actividad</td>
-                    <td><textarea name="activity"><%=editPlace.getActivity()%></textarea></td>
+                    <td><textarea name="activity" required><%=editPlace.getActivity()%></textarea></td>
                 </tr>
                 <tr>
                     <td>Descripcion</td>
-                    <td><textarea name="description"><%=editPlace.getDescription()%></textarea></td>
+                    <td><textarea name="description" required><%=editPlace.getDescription()%></textarea></td>
                 </tr>
                 <tr>
                     <td>Informacion</td>
-                    <td><textarea name="information"><%=editPlace.getInformation()%></textarea></td>
+                    <td><textarea name="information" required><%=editPlace.getInformation()%></textarea></td>
                 </tr>
             </table>
             <div class="boton">
