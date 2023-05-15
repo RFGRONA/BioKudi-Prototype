@@ -25,7 +25,7 @@ Este proyecto consiste en un mapa interactivo que muestra información sobre lug
 ![Diagrama de clases. Relación entre el modelo y el controlador.](https://github.com/RFGRONA/BioKudi/blob/Preview/uml/Classes.svg)
 
 ### Diagrama de vistas
-![Diagrama de vistas. Relación entre las vistas y el controlador.]()
+![Diagrama de vistas. Relación entre las vistas y el controlador.](https://github.com/RFGRONA/BioKudi/blob/Preview/uml/View.svg)
 
 ### Diagrama de base de datos
 ![Diagrama de base de datos. Tabla de lugares.](https://github.com/RFGRONA/BioKudi/blob/Preview/uml/db.png)
