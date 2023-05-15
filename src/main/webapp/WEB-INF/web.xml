@@ -8,12 +8,4 @@
             30
         </session-timeout>
     </session-config>
-    <servlet>
-        <servlet-name>Servlet</servlet-name>
-        <servlet-class>app.biokudi.controller.Servlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>Servlet</servlet-name>
-        <url-pattern>/CRUD</url-pattern>
-    </servlet-mapping>
 </web-app>

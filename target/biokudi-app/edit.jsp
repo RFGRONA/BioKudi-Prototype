@@ -14,7 +14,7 @@
     %>
     <body>
         <h1>Actualizar registro</h1>
-        <form action="CRUD" method="POST" accept-charset="UTF-8">
+        <form action="Servlet" method="POST" accept-charset="UTF-8">
             <input type="hidden" name="instruction" value="update">
             <input type="hidden" name="idPlace" value="<%=editPlace.getIdPlace()%>">
             <table>
@@ -46,7 +46,7 @@
             <div class="boton">
                 <button type="submit">Actualizar</button>
         </form>
-        <form action="CRUD" method="GET">
+        <form action="Servlet" method="GET">
             <button type="submit">Cancelar</button>
         </form>
     </div>

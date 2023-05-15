@@ -43,12 +43,12 @@
                         <td><%= place.getInformation()%></td>
                         <td>
                             <div class="hacer">
-                                <form action="CRUD" method="POST">
+                                <form action="Servlet" method="POST">
                                     <input type="hidden" name="instruction" value="delete">
                                     <input type="hidden" name="idPlace" value="<%=place.getIdPlace()%>">
                                     <button type="submit">Eliminar</button>
                                 </form>
-                                <form action="CRUD" method="POST">
+                                <form action="Servlet" method="POST">
                                     <input type="hidden" name="instruction" value="edit">
                                     <input type="hidden" name="idPlace" value="<%=place.getIdPlace()%>">
                                     <button type="submit">Editar</button>
