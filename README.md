@@ -1,11 +1,5 @@
 # BioKudi
 
-#### Integrantes:
-- Fredy Alejandro Zarate Abril
-- Gabriel Esteban Martinez Roldan
-- Ivone Gisela Lopez Cruz
-- Laura Valentina Vargas Sierra
-
 ***Preparación del proyecto***
 * Java SDK 11
 * Apache TomCat 9
